@@ -1,0 +1,17 @@
+{
+    "name": "yowenslyvolcy/action-response-php",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "ActionResponsePhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Yowensly Volcy",
+            "email": "svolcy12@icloud.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
