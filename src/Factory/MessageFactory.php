@@ -7,14 +7,14 @@ use ARP\Support\Arr;
 class MessageFactory{
     
     protected static $instance = null;
-    private $messages = [];
+    protected $messages = [];
 
     public function __construct()
     {
-        $this->messages = include "../src/config/index.php";
+        $this->messages = include "../src/config/messages.php";
     }
 
-    public static function getInstance(){
+    public static function getInstance() : self{
         if (self::$instance === null) {
             self::$instance = new self();
         }

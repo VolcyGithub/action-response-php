@@ -2,6 +2,7 @@
 namespace ARP;
 
 use ARP\Factory\MessageFactory;
+use ARP\Http\Client;
 use ARP\Http\JsonResponder;
 
 class Responder{
@@ -11,6 +12,7 @@ class Responder{
     }
 
     public static function getRawText($index){
-        return MessageFactory::getInstance()->createMessage($index);
+       
+        echo MessageFactory::getInstance()->createMessage($index)->getText(Client::getPreferredLanguage());
     }
 }

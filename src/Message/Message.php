@@ -3,6 +3,7 @@
 namespace ARP\Message;
 
 use ARP\Contracts\MessageInterface;
+use ARP\Http\Client;
 
 class Message implements MessageInterface
 {
@@ -10,6 +11,7 @@ class Message implements MessageInterface
     protected int $http_status;
     protected array $message;
     protected string $type;
+    protected Client $client;
 
     public function __construct(array $data)
     {
@@ -38,7 +40,7 @@ class Message implements MessageInterface
 
     public function getText(string $lang): string
     {
-        return $this->messages[$lang] ?? $this->messages['en'] ?? 'Message not available';
+        return $this->message[$lang] ?? $this->message['en'] ?? 'Message not available';
     }
 
     public function toArray(): array
